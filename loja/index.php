@@ -1,0 +1,34 @@
+<?php 
+
+date_default_timezone_set('America/Sao_Paulo');
+
+if(!isset($_SESSION)){
+	session_start();
+}
+
+require './lib/autoload.php';
+
+$smarty = new Template();
+$categorias = new Categorias();
+$categorias->GetCategorias();
+
+//valores para o template
+$smarty->assign('NOME', 'Equique VemDoar');
+$smarty->assign('GET_TEMA', Rotas::get_SiteTEMA());
+$smarty->assign('GET_NOME', Config::SITE_NOME);
+$smarty->assign('GET_SITE_HOME', Rotas::get_SiteHOME());
+$smarty->assign('PAG_PRODUTOS', Rotas::pag_Produtos());
+$smarty->assign('PAG_MINHACONTA', Rotas::pag_MinhaConta());
+$smarty->assign('PAG_ANUNCIOS', Rotas::pag_ProdutosADM());
+$smarty->assign('TITULO_SITE', Config::SITE_NOME);
+$smarty->assign('CATEGORIAS', $categorias->GetItens());
+$smarty->assign('DATA', Sistema::DataAtualBR());
+$smarty->assign('PAG_LOGOFF', Rotas::pag_Logoff());
+$smarty->assign('LOGADO', Login::Logado());
+
+if(Login::Logado()){
+	$smarty->assign('USER', $_SESSION['CLI']['cli_nome']);	
+}
+
+$smarty->display('index.html');
+ ?>
