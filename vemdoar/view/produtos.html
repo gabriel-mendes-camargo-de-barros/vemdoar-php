@@ -1,0 +1,121 @@
+<div style="padding: 5%;">
+
+  {if $PRO_TOTAL < 1} <H4 class="alert alert-danger">Nenhum produto encontrado!!</H4>
+    <meta http-equiv="refresh" content=1;url="{$PRODUTOS}">
+
+    {/if}
+
+    <div class="col-md-3 focus-grid">
+      <a href="produtos/1">
+        <div class="focus-border">
+          <div class="focus-layout">
+            <div class="focus-image"><i class="fa fa-paw"></i></div>
+            <h4 class="clrchg">Acessórios para Animais</h4>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-3 focus-grid">
+      <a href="produtos/5">
+        <div class="focus-border">
+          <div class="focus-layout">
+            <div class="focus-image"><i class="fa fa-car"></i></div>
+            <h4 class="clrchg"> Acessórios Automotivos</h4>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-3 focus-grid">
+      <a href="produtos/2">
+        <div class="focus-border">
+          <div class="focus-layout">
+            <div class="focus-image"><i class="fa fa-laptop"></i></div>
+            <h4 class="clrchg">Eletrônicos</h4>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-3 focus-grid">
+      <a href="produtos/3">
+        <div class="focus-border">
+          <div class="focus-layout">
+            <div class="focus-image"><i class="fa fa-gamepad"></i></div>
+            <h4 class="clrchg">Infantil</h4>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-3 focus-grid">
+      <a href="produtos/4">
+        <div class="focus-border">
+          <div class="focus-layout">
+            <div class="focus-image"><i class="fa fa-book"></i></div>
+            <h4 class="clrchg">Livros, Esportes e Hobbies</h4>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-3 focus-grid">
+      <a href="produtos/8">
+        <div class="focus-border">
+          <div class="focus-layout">
+            <div class="focus-image"><i class="fa fa-shield"></i></div>
+            <h4 class="clrchg">Outros</h4>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-3 focus-grid">
+      <a href="produtos/9">
+        <div class="focus-border">
+          <div class="focus-layout">
+            <div class="focus-image"><i class="fa fa-asterisk"></i></div>
+            <h4 class="clrchg">Roupas</h4>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-3 focus-grid">
+      <a href="produtos/10">
+        <div class="focus-border">
+          <div class="focus-layout">
+            <div class="focus-image"><i class="fa fa-home"></i></div>
+            <h4 class="clrchg">Utencilios para Casa</h4>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="clearfix"></div>
+
+    <hr>
+    <br>
+    <br>
+
+    
+    <!--  começa lista de produtos  ---->
+    <section id="produtos">
+      <ul style="list-style: none">
+        <div class="row" id="pularliha">
+          {foreach from=$PRO item=P}
+          <li class="col-md-4">
+            <br>
+            <div class="thumbnail">
+              <a href="{$PRO_INFO}/{$P.pro_id}">
+                <img src="{$P.pro_img}" width="200" height="200" alt="">
+                <div class="caption">
+                  <h4 class="text-center"> {$P.pro_nome}</h4>
+                </div>
+              </a>
+            </div>
+          </li>
+          {/foreach}
+        </div>
+      </ul>
+    </section>
+    <!--  paginação inferior   -->
+    <section id="pagincao" class="row">
+      <center>
+        {$PAGINAS}
+      </center>
+    </section>
+</div>
