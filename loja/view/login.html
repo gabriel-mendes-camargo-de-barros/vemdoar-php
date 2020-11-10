@@ -1,0 +1,68 @@
+{if $LOGADO == true}
+
+
+{else}
+
+<div style="padding: 5%;">
+<section class="row" id="fazerlogin">
+
+    <div class="col-md-1 text-center">   
+        
+    </div>
+    <div class="col-md-4 login-banner"></div>
+
+    <form class="col-md-5" name="cliente_login" method="post" action="" >
+    
+        <div class="col-md-4 text-center">   
+        
+        </div>
+     
+        <!---  aqui estão os campos -->
+        <div class="col-md-8">
+
+     
+            <div class="form-group"> 
+                <label style="color: #01A185;"> Email: </label>
+                <input type="email"  class="form-control " name="txt_email" value="" placeholder="Digite seu email" required autocomplete="off" style="color: #01A185; border-color: #01ca95;">        
+
+            </div>
+
+
+            <div class="form-group"> 
+                 <label style="color: #01A185;"> Senha: </label>
+                 <input type="password"  class="form-control " name="txt_senha" value="" placeholder="Digite sua senha" required style="color: #01A185; border-color: #01ca95;">        
+           
+            </div>
+
+
+            <div class="form-group"> 
+                
+                <button class="btn btn-geral btn-block btn-lg btn-login"><i class="glyphicon glyphicon-log-in"></i> Entrar </button>
+          
+                
+                
+                
+            </div>
+            <div class="form-group" style="display:flex; justify-content: space-between;"> 
+                
+                <a href="{$PAG_CADASTRO}" class="btn btn-default " style="color: #01A185; border-color: #01ca95;" ><i class="glyphicon glyphicon-pencil"></i> Me Cadastrar</a>
+             
+                
+                <a href="{$PAG_RECOVERY}" class="btn btn-default " style="color: #01A185; border-color: #01ca95;"><i class="glyphicon glyphicon-question-sign"></i> Esqueci a Senha</a>
+           
+                
+                
+            </div>
+
+            
+        </div><!-- fim dos campos -->
+
+    
+    </form>
+    
+    
+</section>
+</div>
+{/if}
+
+
