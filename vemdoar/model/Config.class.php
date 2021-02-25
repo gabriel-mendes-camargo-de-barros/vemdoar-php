@@ -14,7 +14,7 @@ Class Config{
 	// INFORMAÇÕES DO BANCO DE DADOS
 	const BD_HOST = "localhost",
 		  BD_USER = "root",
-		  BD_SENHA = "",
+		  BD_SENHA = "", 
 		  BD_BANCO = "vemdoar",
 		  BD_PREFIX = "qc_"; 
 
